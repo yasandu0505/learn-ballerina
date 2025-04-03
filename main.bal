@@ -1,5 +1,6 @@
-import ballerina/io;
-
-public function main() {
-    io:println("Hello, World!");
+import ballerina/http;
+service / on new http:Listener(9090) {
+    resource function get sayHello() returns string{
+        return "Hello from Docker!";
+    }
 }
